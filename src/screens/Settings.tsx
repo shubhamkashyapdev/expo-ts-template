@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native"
 import { RootStackParamList } from "../types/common"
 import { Button, View } from "react-native"
 import { StatusBar } from "expo-status-bar"
-import { styles } from "src/styles/global.styles"
+import { GlobalClassName } from "src/styles/global.styles"
 
 const Settings = () => {
   type settingScreenProps = NativeStackNavigationProp<
@@ -12,7 +12,7 @@ const Settings = () => {
   >
   const navigation = useNavigation<settingScreenProps>()
   return (
-    <View style={styles.container}>
+    <View className={GlobalClassName.container}>
       <Button
         onPress={() => navigation.navigate("Home")}
         title="Back To Home"
