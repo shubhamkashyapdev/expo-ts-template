@@ -5,31 +5,34 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { RootStackParamList } from "./src/types/common"
 import { HomeScreen, SettingsScreen } from "src/screens"
 import { HeaderTitle } from "src/components/common"
+import { Provider as JotaiProvider } from "jotai"
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            headerTitle: (props) => <HeaderTitle {...props} />,
-            headerTitleAlign: "center",
-          }}
-        />
-        <Stack.Screen
-          name="Settings"
-          component={SettingsScreen}
-          options={{
-            headerTitle: (props) => <HeaderTitle {...props} />,
-            headerTitleAlign: "center",
-            animation: "slide_from_right",
-          }}
-        />
-      </Stack.Navigator>
+      <JotaiProvider>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{
+              headerTitle: (props) => <HeaderTitle {...props} />,
+              headerTitleAlign: "center",
+            }}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{
+              headerTitle: (props) => <HeaderTitle {...props} />,
+              headerTitleAlign: "center",
+              animation: "slide_from_right",
+            }}
+          />
+        </Stack.Navigator>
+      </JotaiProvider>
     </NavigationContainer>
   )
 }
