@@ -7,6 +7,7 @@ import { GlobalClassName } from "src/styles/global.styles"
 import { useAtom } from "jotai"
 import { themeAtom } from "src/store/themeStore"
 import { ThemeSwitcher } from "src/components/common"
+import { Button as PaperButton } from "react-native-paper"
 
 const Home = () => {
   const [themeState] = useAtom(themeAtom)
@@ -14,10 +15,12 @@ const Home = () => {
   const navigation = useNavigation<homeScreenProps>()
   return (
     <View className={`${GlobalClassName.container} ${themeState}`}>
-      <Button
+      <PaperButton
+        mode="contained"
         onPress={() => navigation.navigate("Settings")}
-        title="Got To Settings"
-      />
+      >
+        Go To Settings
+      </PaperButton>
       <ThemeSwitcher />
       <StatusBar style="auto" />
     </View>
