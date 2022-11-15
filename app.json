@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.dev1800.expotsstarter"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
