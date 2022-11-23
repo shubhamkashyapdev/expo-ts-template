@@ -1,8 +1,8 @@
-import { View, Pressable } from "react-native"
-import React from "react"
-import { useAtom } from "jotai"
-import { themeAtom } from "src/store/themeStore"
-import { MotiView } from "moti"
+import { View, Pressable } from 'react-native'
+import React from 'react'
+import { useAtom } from 'jotai'
+import { themeAtom } from 'src/store/themeStore'
+import { MotiView } from 'moti'
 
 const ThemeSwitcher = () => {
   const [, setThemeState] = useAtom(themeAtom)
@@ -11,19 +11,19 @@ const ThemeSwitcher = () => {
       <MotiView
         from={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ type: "timing" }}
+        transition={{ type: 'timing' }}
       >
         <Pressable
-          onPress={() => setThemeState("bg-purple-600")}
+          onPress={() => setThemeState('bg-purple-600')}
           className="h-16 w-16 rounded-full shadow-sm bg-purple-600"
         ></Pressable>
       </MotiView>
       <Pressable
-        onPress={() => setThemeState("bg-slate-600")}
+        onPress={() => setThemeState('bg-slate-600')}
         className="h-16 w-16 rounded-full shadow-sm bg-slate-600"
       ></Pressable>
       <Pressable
-        onPress={() => setThemeState("bg-pink-600")}
+        onPress={() => setThemeState('bg-pink-600')}
         className="h-16 w-16 rounded-full shadow-sm bg-pink-600"
       ></Pressable>
     </View>

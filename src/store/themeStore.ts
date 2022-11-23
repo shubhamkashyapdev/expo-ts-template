@@ -1,3 +1,3 @@
-import { atom } from "jotai"
+import { atom } from 'jotai'
 
-export const themeAtom = atom<string>("bg-white")
+export const themeAtom = atom<string>('bg-white')
