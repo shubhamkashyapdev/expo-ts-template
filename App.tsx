@@ -8,6 +8,10 @@ import { HomeScreen, SettingsScreen } from "src/screens"
 import { HeaderTitle } from "src/components/common"
 import { Provider as JotaiProvider } from "jotai"
 import { Provider as PaperProvider } from "react-native-paper"
+import Login from "src/screens/Login"
+import BottomTabNavigator from "src/navigation/BottomTabNavigator"
+
+
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const Tab = createBottomTabNavigator()
 
@@ -16,8 +20,11 @@ export default function App() {
     <NavigationContainer>
       <JotaiProvider>
         <PaperProvider>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen
+          <Stack.Navigator initialRouteName="Login"
+            screenOptions={{
+              headerShown: false,
+            }} >
+            {/* <Stack.Screen
               name="Home"
               component={HomeScreen}
               options={{
@@ -33,7 +40,9 @@ export default function App() {
                 headerTitleAlign: "center",
                 animation: "slide_from_right",
               }}
-            />
+            /> */}
+            <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="BottomTabNavigator" component={BottomTabNavigator}/>
           </Stack.Navigator>
         </PaperProvider>
       </JotaiProvider>

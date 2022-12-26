@@ -9,7 +9,7 @@ import { useAtom } from 'jotai'
 import { ThemeSwitcher } from 'src/components/common'
 import { MotiView } from 'moti'
 
-const Settings = () => {
+const Profile = () => {
   const [themeState] = useAtom(themeAtom)
   type settingScreenProps = NativeStackNavigationProp<
     RootStackParamList,
@@ -24,8 +24,7 @@ const Settings = () => {
         transition={{ type: 'timing', duration: 400, delay: 200 }}
       >
         <Button
-          onPress={() => navigation.navigate('Home')}
-          title="Back To Home"
+          title="Setting"
         />
       </MotiView>
       <ThemeSwitcher />
@@ -33,4 +32,4 @@ const Settings = () => {
     </View>
   )
 }
-export default Settings
+export default Profile

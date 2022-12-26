@@ -17,11 +17,9 @@ const Home = () => {
     <View className={`${GlobalClassName.container} ${themeState}`}>
       <PaperButton
         mode="contained"
-        onPress={() => navigation.navigate('Settings')}
       >
-        Go To Settings
+        Home
       </PaperButton>
-      <ThemeSwitcher />
       <StatusBar style="auto" />
     </View>
   )
