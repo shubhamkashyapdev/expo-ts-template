@@ -3,4 +3,5 @@ export type RootStackParamList = {
   Settings: undefined
   Login: undefined
   BottomTabNavigator: undefined
+  EmailAuth: undefined
 }
